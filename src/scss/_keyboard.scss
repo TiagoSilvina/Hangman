@@ -1,0 +1,41 @@
+// Keyboard //////////////////////////////////////////////////
+
+.keyboard-container{
+    align-self: stretch;
+    /* border: 2px solid red; */
+}
+
+.keyboard{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: .5rem;
+
+    &__key{
+        width: 100;
+        border: 3px solid black;
+        background: none;
+        aspect-ratio: 1/1;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        padding: .5rem;
+        font-weight: bold;
+        cursor: pointer;
+        color: black;
+
+        &:hover :not(:disabled){
+            background-color: hsl(200, 100%, 75%);
+        }
+        &:focus :not(:disabled){
+            background-color: hsl(200, 100%, 75%);
+        }
+        &-active{
+            @extend .keyboard__key;
+            background-color: hsl(200, 100%, 50%);
+            color: white;
+        } 
+        &-inactive{
+            @extend .keyboard__key;
+            opacity: .3;
+        }
+    }
+}
