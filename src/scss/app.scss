@@ -1,20 +1,29 @@
+@import "header";
 @import "gallow";
 @import "man";
 @import "word";
 @import "keyboard";
 
-.game_screen {
+body{
+    background-color: black;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.game {
     max-width: 800px;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     margin: 0 auto;
     align-items: center;
+    font-family: monospace;
+    height: 100vh;
+    background-color: white;
+    
 
-     &__title {
-         font-size: 2rem;
-         text-align: center;
-        }
+
 }
 
 

@@ -4,6 +4,7 @@ import words from "./wordList.json";
 import HangmanDrawing from "./HangmanDrawing";
 import HangmanWord from "./HangmanWord";
 import Keyboard from "./Keyboard";
+import WinLoss from "./WinLoss";
 
 function App() {
 
@@ -64,12 +65,23 @@ function App() {
 
 
   return (
-    <div className="game_screen">
-      <div className="game_screen__title">
-        {isWinner && "Victory - Refresh the page to restart"}
-        {isLoser && "No luck this time - Refresh the page to restart"}
+    <div className="game">
+      <div className="header">
+      <div className="header__title">
+        Hangman
       </div>
-        <HangmanDrawing numberOfGueses={incorrectLetters.length} />
+        <WinLoss 
+                win={isWinner}
+                loss={isLoser} />
+      <div className="header__message">
+        {isWinner && "Victory!"}
+        {isLoser && "No luck this time"}
+        <div className="header__message-restart">Click ENTER to restart</div>
+      </div>
+    </div>
+      
+        <HangmanDrawing 
+                      numberOfGueses={incorrectLetters.length} />
         <HangmanWord 
                     reveal={isLoser}
                     guessedLetters = {guessedLetters}
@@ -79,11 +91,11 @@ function App() {
                   disabled={isWinner || isLoser}
                   activeLetters = {guessedLetters.filter(letter => wordToGuess.includes(letter))}
                   inactiveLetters ={incorrectLetters}
-                  addGuessedLetter={addGuessedLetter}
-                  />
+                  addGuessedLetter={addGuessedLetter}/>
       </div>
       </div>
       )
     }
 
 export default App
+ 

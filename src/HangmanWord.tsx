@@ -15,7 +15,7 @@ function HangmanWord({guessedLetters, wordToGuess, reveal=false}: HangmanWordPro
             ? "visible" 
             : "hidden",
             color: !guessedLetters.includes(letter) && reveal
-            ? "red" : "black"
+            ? "hsl(0, 0%, 45%)" : "black"
             }}
             key={index}>
             {letter}

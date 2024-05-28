@@ -32,10 +32,12 @@ const BODYPARTS = [ROPE, HEAD, TORSO, RIGHTARM, LEFTARM, RIGHTLEG, LEFTLEG]
 
   return (
     <div className="drawing">
+        <div className="drawing__background">
         {BODYPARTS.slice(0, numberOfGueses)}
         <div className="drawing__bar"></div>
         <div className="drawing__post"></div>
         <div className="drawing__base"></div>
+        </div>
     </div>
   )
 }

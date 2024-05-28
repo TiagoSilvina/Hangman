@@ -1,36 +1,40 @@
 // Keyboard //////////////////////////////////////////////////
 
 .keyboard-container{
-    align-self: stretch;
-    /* border: 2px solid red; */
+    max-width: 800px;
 }
 
 .keyboard{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
-    gap: .5rem;
+    display: flex;
+    flex-direction: column;
+
+    
 
     &__key{
-        width: 100;
-        border: 3px solid black;
+        text-align: center;
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
         background: none;
-        aspect-ratio: 1/1;
-        font-size: 2.5rem;
+        font-size: 2rem; 
         text-transform: uppercase;
         padding: .5rem;
         font-weight: bold;
         cursor: pointer;
         color: black;
+        margin: 2px;
+        border-radius: 3px;
+        background-color: lightgrey;
 
-        &:hover :not(:disabled){
-            background-color: hsl(200, 100%, 75%);
+        &:hover /* :not(:disabled) */{
+            background-color: hsl(0, 0, 75%);
         }
-        &:focus :not(:disabled){
-            background-color: hsl(200, 100%, 75%);
-        }
+       /*  &:focus :not(:disabled){
+            background-color: hsl(50, 100%, 75%);
+        } */
         &-active{
             @extend .keyboard__key;
-            background-color: hsl(200, 100%, 50%);
+            background-color: lightslategray;
             color: white;
         } 
         &-inactive{
@@ -38,4 +42,8 @@
             opacity: .3;
         }
     }
+.row{
+    display: flex;
+    justify-content: center;
+}
 }
