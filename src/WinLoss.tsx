@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import bonus from '/sound/bonus.mp3';
+import error from '/sound/error.mp3';
 
 type WinLossProps={
     win: boolean
@@ -31,12 +33,16 @@ function WinLoss({win,loss}:WinLossProps) {
         function countWins(){
             if (win) {
               setWins(wins + 1)
+              const audio = new Audio(bonus);
+              audio.play();
               return
             }
           }
           function countLosses(){
             if (loss) {
               setLosses(losses + 1)
+              const audio = new Audio(error);
+              audio.play();
               return
             }
           }

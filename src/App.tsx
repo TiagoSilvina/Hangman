@@ -74,8 +74,8 @@ function App() {
                 win={isWinner}
                 loss={isLoser} />
       <div className="header__message">
-        {isWinner && "Victory!"}
-        {isLoser && "No luck this time"}
+        {isWinner && "You saved your neck!"}
+        {isLoser && "Justice was served"}
         <div className="header__message-restart">Click ENTER to restart</div>
       </div>
     </div>
