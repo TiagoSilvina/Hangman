@@ -15,8 +15,10 @@ function App() {
 
 // Variables /////////////////////////////////////////////
 
-  const [wordToGuess, setWordToGuess] = useState((getWord )=>{
-    return words[Math.floor(Math.random() * words.length)]})
+  /* const [wordToGuess, setWordToGuess] = useState((getWord )=>{
+    return words[Math.floor(Math.random() * words.length)]}) */
+
+  const [wordToGuess, setWordToGuess] = useState(getWord);
   
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   
@@ -47,7 +49,7 @@ function App() {
     return () => {
       document.removeEventListener("keypress", handler)
     }
-  }, [/* guessedLetters */addGuessedLetter])
+  }, [addGuessedLetter, guessedLetters])
 
 // Reset w/ ENTER /////////////////////////////////////////////
   useEffect(()=>{
@@ -77,7 +79,7 @@ function App() {
       <div className="header__message">
         {isWinner && "You saved your neck!"}
         {isLoser && "Justice was served"}
-        <div className="header__message-restart">Click ENTER to restart</div>
+        <div className="header__message-restart">Press ENTER to restart</div>
       </div>
     </div>
       

@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
+import bonus from '/sound/bonus.mp3';
+import error from '/sound/error.mp3';
 
 type WinLossProps={
     win: boolean
     loss: boolean
 }
-
-const error = require('/sound/error.mp3');
-const bonus = require('/sound/bonus.mp3');
 
 function WinLoss({win,loss}:WinLossProps) {
 
