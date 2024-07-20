@@ -2,8 +2,8 @@
 type KeyboardProps={
   activeLetters: string[],
   inactiveLetters: string[],
-  aaddGuessedLetter: (letter:string)=> void
-  disbaled?: boolean,
+  addGuessedLetter: (letter:string)=> void
+  disabled?: boolean,
 }
 
 function Keyboard( {activeLetters, inactiveLetters, addGuessedLetter, disabled=false }: KeyboardProps) {

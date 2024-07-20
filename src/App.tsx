@@ -6,6 +6,7 @@ import HangmanWord from "./HangmanWord";
 import Keyboard from "./Keyboard";
 import WinLoss from "./WinLoss";
 
+
 function App() {
 
   function getWord() {
@@ -46,7 +47,7 @@ function App() {
     return () => {
       document.removeEventListener("keypress", handler)
     }
-  }, [guessedLetters])
+  }, [/* guessedLetters */addGuessedLetter])
 
 // Reset w/ ENTER /////////////////////////////////////////////
   useEffect(()=>{
